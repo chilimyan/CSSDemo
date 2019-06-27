@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>position</title>
+	</head>
+	<style>
+		.static {
+			position: static;
+		}
+		.relative1 {
+			position: relative;
+			border: solid red 10px;
+		}
+		.relative2 {
+			position: relative;
+			top: -20px;
+			left: 20px;
+			background-color: white;
+			width: 500px;
+			border: solid blue 10px;
+		}
+		.fixed {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			width: 200px;
+			background-color: white;
+			border: solid blue 10px;
+		}
+		.relative {
+			position: relative;
+			width: 600px;
+			height: 400px;
+			border: solid blue 10px;
+		}
+		.absolute {
+			position: absolute;
+			top: 120px;
+			right: 0;
+			width: 300px;
+			height: 200px;
+			border: solid red 10px;
+		}
+	</style>
+	<body>
+		<div>
+			为了制作更多复杂的布局，我们需要讨论下 position 属性。它有一大堆的值，名字还都特抽象，别提有多难记了。让我们先一个个的过一遍，不过你最好还是把这页放到书签里。
+		</div>
+		<h3>static</h3>
+		<div class="static">
+			static 是默认值。任意 position: static; 的元素不会被特殊的定位。一个 static 元素表示它不会被“positioned”，一个 position 属性被设置为其他值的元素表示它会被“positioned”。
+		</div>
+		<h3>relative</h3>
+		<div class="relative1">
+			relative 表现的和 static 一样，除非你添加了一些额外的属性。
+		</div>
+		<div class="relative2">
+			在一个相对定位（position属性的值为relative）的元素上设置 top 、 right 、 bottom 和 left 属性会使其偏离其正常位置。其他的元素的位置则不会受该元素的影响发生位置改变来弥补它偏离后剩下的空隙。
+		</div>
+		<h3>fixed</h3>
+		<div>
+			一个固定定位（position属性的值为fixed）元素会相对于视窗来定位，这意味着即便页面滚动，它还是会停留在相同的位置。和 relative 一样， top 、 right 、 bottom 和 left 属性都可用。
+			一个固定定位元素不会保留它原本在页面应有的空隙（脱离文档流）。
+
+令人惊讶地是移动浏览器对 fixed 的支持很差。这里有相应的解决方案http://bradfrostweb.com/blog/mobile/fixed-position/.
+		</div>
+		<div class="fixed">
+			Hello！暂时不要太关注我哦。
+		</div>
+		<h3>absolute</h3>
+		<div>
+			absolute 是最棘手的position值。 absolute 与 fixed 的表现类似，但是它不是相对于视窗而是相对于最近的“positioned”祖先元素。如果绝对定位（position属性的值为absolute）的元素没有“positioned”祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。记住一个“positioned”元素是指 position 值不是 static 的元素。
+		</div>
+		<div class="relative">
+			这个元素是相对定位的。如果它是 position: static; ，那么它的绝对定位子元素会跳过它直接相对于body元素定位。
+			<div class="absolute">
+				这个元素是绝对定位的。它相对于它的父元素定位。
+			</div>
+		</div>
+		<div>
+			这部分比较难理解，但它是创造优秀布局所必需的知识。下一页我们会使用 position 做更具体的例子。
+		</div>
+	</body>
+</html>

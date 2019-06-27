@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>百分比宽度</title>
+	</head>
+	<style>
+		.backdiv {
+			border: solid blue 5px;
+			overflow: auto;
+		}
+		.artic-img {
+			float: right;
+			width: 50%;
+		}
+		nav {
+			float: left;
+			width: 25%;
+			border: solid red 5px;
+		}
+		section {
+			margin-left: 25%;
+			border: solid yellow 5px;
+		}
+	</style>
+	<body>
+		<div>
+			百分比是一种相对于包含块的计量单位。它对图片很有用：如下我们实现了图片宽度始终是容器宽度的50%。把页面缩小看下效果！
+		</div>
+		<div class="backdiv">
+			<img src="./ilta.png" class="artic-img"/>
+			你甚至还能同时使用 min-width 和 max-width 来限制图片的最大或最小宽度！
+		</div>
+		<h3>
+			百分比宽度布局
+		</h3>
+		<div>
+			你可以用百分比做布局，但是这需要更多的工作。在下面的例子中，当窗口宽度很窄时 nav 的内容会以一种不太友好的方式被包裹起来。总而言之，选一种最合适你的内容的方式。
+		</div>
+		<div class="backdiv">
+			<nav>
+				<ul>
+					<li>Home</li>
+					<li>Taco Menu</li>
+					<li>Draft</li>
+					<li>Hours</li>
+					<li>dhakjhd</li>
+					<li>fnkjhjkh</li>
+				</ul>
+			</nav>
+			<section>
+				这个例子和之前那个外观一模一样。请注意我们在容器上做了“清除浮动”。原本在这个例子中是不需要的，但是当 nav 比非浮动的内容还要高时就需要了。
+			</section>
+			<section>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+			</section>
+		</div>
+	</body>
+</html>

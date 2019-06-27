@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>flexbox</title>
+	</head>
+	<style>
+		.flex-column {
+			-webkit-flex: 1;
+			flex: 1;
+			border: solid blue 5px;
+		}
+		nav {
+			width: 200px;
+			border: solid yellow 5px;
+		}
+		.container {
+			display: -webkit-flex;
+			display: flex;
+			border: solid red 5px;
+		}
+		
+		.inital {
+			-webkit-flex: initial;
+			flex: initial;
+			width: 200px;
+			min-width: 100px;
+			border: solid yellow 5px;
+		}
+		
+		.none {
+			-webkit-flex: none;
+			flex: none;
+			width: 200px;
+			border: solid yellow 5px;
+		}
+		
+		.flex1 {
+			-webkit-flex: 1;
+			flex: 1;
+			border: solid yellow 5px;
+		}
+		
+		.flex2 {
+			-webkit-flex: 2;
+			flex: 2;
+			border: solid yellow 5px;
+		}
+		
+		.vertical-container {
+			height: 300px;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			border: solid yellow 5px;
+		}
+		
+	</style>
+	<body>
+		<div class="container">
+			<nav>
+				<ul>
+					<li>Home</li>
+					<li>Taco Menu</li>
+					<li>Draft</li>
+					<li>Hours</li>
+					<li>dhakjhd</li>
+					<li>fnkjhjkh</li>
+				</ul>
+			</nav>
+			<div style="border: solid red 5px;">
+				<section class="flex-column">
+					这个例子和之前那个外观一模一样。请注意我们在容器上做了“清除浮动”。原本在这个例子中是不需要的，但是当 nav 比非浮动的内容还要高时就需要了。
+				</section>
+				<section>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+				</section>
+			</div>
+		</div>
+		<h3>flex的牛逼布局</h3>
+		<div class="container">
+			<div class="inital">
+				空间足够的时候，我的宽度是200px，如果空间不足，我会变窄到100px，但不会再窄了。
+			</div>
+			<div class="none">
+				无论窗口如何变化，我的宽度一直是200px。
+			</div>
+			<div class="flex1">
+				我会占满剩余宽度的1/3。
+			</div>
+			<div class="flex2">
+				我会占满剩余宽度的2/3。
+			</div>
+		</div>
+		<h3>使用 Flexbox 的居中布局</h3>
+		<div class="vertical-container">
+			<div>
+				CSS里总算是有了一种简单的垂直居中布局的方法了！
+			</div>
+		</div>
+	</body>
+</html>

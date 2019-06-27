@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>清除浮动（clearfix hack）</title>
+	</head>
+	<style>
+		img {
+			float: right;
+		}
+		div {
+			border: solid blue 10px;
+		}
+		.clearfix {
+			overflow: auto;
+		}
+	</style>
+	<body>
+		<div>
+			在使用浮动的时候经常会遇到一个古怪的事情：
+		</div>
+		<div>
+			<img src="./ilta.png" />
+			不......这个图片比包含它的元素还高， 而且它是浮动的，于是它就溢出到了容器外面！
+		</div>
+		<div>
+			见证奇迹的时刻到了！有一种比较丑陋的方法可以解决这个问题，它叫做清除浮动（clearfix hack）.
+			让我们加入一些新的CSS样式：
+		</div>
+		<div class="clearfix">
+			<img src="./ilta.png" />
+			好多了！
+		</div>
+	</body>
+</html>
